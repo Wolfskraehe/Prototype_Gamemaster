@@ -65,8 +65,14 @@ func _on_EndTurn_pressed():
 	
 	#resolving ai actions
 	for house in house_list:
+		#dummy long term action for ai, should be in house class later
+		var ai_long_term_action=action.instance()
+		ai_long_term_action.instant=false
+		ai_long_term_action.action_name="AI Long Term Action"
+		
 		if house.player==false:
 			event_log+=house.ai_house_event_text()
+			action_queue.append(ai_long_term_action)
 			get_node("InfoText").set_text(event_log)
 			
 	#resolving all queued actions
