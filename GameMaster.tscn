@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GameMaster.gd" type="Script" id=1]
+
+[node name="GameMaster" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="HouseTradePower" type="Label" parent="."]
+margin_left = 578.135
+margin_top = 49.6756
+margin_right = 724.135
+margin_bottom = 67.6756
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstantAction" type="Button" parent="."]
+margin_left = 104.0
+margin_top = 62.0
+margin_right = 218.0
+margin_bottom = 82.0
+rect_pivot_offset = Vector2( 249.968, 0 )
+text = "Instant Action"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LongTermAction" type="Button" parent="."]
+margin_left = 105.728
+margin_top = 112.108
+margin_right = 229.728
+margin_bottom = 132.108
+rect_pivot_offset = Vector2( -676.963, -206.351 )
+text = "Long Term Action"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndTurn" type="Button" parent="."]
+margin_left = 110.374
+margin_top = 195.675
+margin_right = 234.374
+margin_bottom = 215.675
+rect_pivot_offset = Vector2( -676.963, -206.351 )
+text = "End Turn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TurnCounter" type="Label" parent="."]
+margin_left = 325.0
+margin_top = 29.0
+margin_right = 397.0
+margin_bottom = 43.0
+
+[node name="InfoText" type="Label" parent="."]
+margin_left = 318.865
+margin_top = 118.703
+margin_right = 511.865
+margin_bottom = 220.703
+
+[connection signal="pressed" from="InstantAction" to="." method="_on_InstantAction_pressed"]
+[connection signal="pressed" from="LongTermAction" to="." method="_on_LongTermAction_pressed"]
+[connection signal="pressed" from="EndTurn" to="." method="_on_EndTurn_pressed"]
